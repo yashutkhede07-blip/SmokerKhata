@@ -1,3 +1,17 @@
+---
+gsd_state_version: "1.0"
+status: unknown
+stopped_at: Phase 1 context gathered
+last_updated: "2026-11-04T17:28:28.449Z"
+state_head: b7cf38b5aadc37cc5036817512827752afe5c901
+progress:
+  total_phases: 8
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
+---
+
 # Project State: SmokerKhata
 
 ## Project Reference
@@ -40,3 +54,9 @@ See: .planning/PROJECT.md (updated 2026-11-04)
 ## Decisions Log
 
 - 2026-11-04: Initialized project — 8 phases, 83 v1 requirements, MVP mode (vertical slices)
+
+## Session
+
+**Last session:** 2026-11-04T17:28:28.429Z
+**Stopped at:** Phase 1 context gathered
+**Resume file:** .planning/phases/01-foundation-auth/01-CONTEXT.md
