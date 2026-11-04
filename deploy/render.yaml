@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: smokerkhata-api
+    env: python
+    region: singapore
+    plan: starter
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "gunicorn smokerkhata.wsgi:application --config deploy/gunicorn.conf.py --chdir backend"
+    releaseCommand: "python backend/manage.py migrate --no-input && python backend/manage.py createcachetable"
+    envVars:
+      - key: DJANGO_DEBUG
+        value: "false"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: smokerkhata-db
+          property: connectionString
+      - key: WEB_CONCURRENCY
+        value: "2"
+      - key: SMS_BACKEND
+        value: "accounts.sms.console.ConsoleSMSBackend"
+
+databases:
+  - name: smokerkhata-db
+    plan: starter
+    region: singapore
+    postgresMajorVersion: 16

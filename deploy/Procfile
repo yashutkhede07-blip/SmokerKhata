@@ -1,0 +1,3 @@
+web: gunicorn smokerkhata.wsgi:application --config deploy/gunicorn.conf.py --chdir backend
+worker: python backend/manage.py qcluster
+release: python backend/manage.py migrate --no-input && python backend/manage.py createcachetable

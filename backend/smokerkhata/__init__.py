@@ -1,0 +1,3 @@
+"""
+smokerkhata package initialization.
+"""

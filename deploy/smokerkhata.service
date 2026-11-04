@@ -1,0 +1,21 @@
+[Unit]
+Description=SmokerKhata Shop Management Gunicorn Daemon
+After=network.target postgresql.service
+
+[Service]
+Type=notify
+User=www-data
+Group=www-data
+RuntimeDirectory=smokerkhata
+WorkingDirectory=/var/www/smokerkhata/backend
+EnvironmentFile=/var/www/smokerkhata/.env
+ExecStart=/var/www/smokerkhata/.venv/bin/gunicorn smokerkhata.wsgi:application --config /var/www/smokerkhata/deploy/gunicorn.conf.py
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=30
+PrivateTmp=true
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
