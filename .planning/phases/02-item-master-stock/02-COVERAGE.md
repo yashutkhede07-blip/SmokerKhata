@@ -1,0 +1,1 @@
+No external API integration: Phase 2 builds internal item master catalog, variants, append-only stock ledger, and inventory reports using PostgreSQL. No third-party API or SDK is integrated in this phase.
