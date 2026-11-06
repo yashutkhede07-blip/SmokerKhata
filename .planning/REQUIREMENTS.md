@@ -9,14 +9,14 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Authentication & Multi-Tenancy
 
-- [ ] **AUTH-01**: Owner can sign up with a 10-digit phone number and receive an OTP via SMS
-- [ ] **AUTH-02**: Owner can log in with phone + OTP; session and JWT issued on success
-- [ ] **AUTH-03**: Owner can create multiple shops under a single account
-- [ ] **AUTH-04**: Owner can invite staff with roles: manager or cashier
-- [ ] **AUTH-05**: Cashier cannot view reports or edit past bills without explicit owner permission grant
-- [ ] **AUTH-06**: Every API endpoint enforces a DRF permission class tied to the user's shop role
-- [ ] **AUTH-07**: OTP endpoint is rate-limited (max 5 attempts per 10 minutes per phone number)
-- [ ] **AUTH-08**: JWT is used for API clients; session auth is used for Django admin only
+- [x] **AUTH-01**: Owner can sign up with a 10-digit phone number and receive an OTP via SMS
+- [x] **AUTH-02**: Owner can log in with phone + OTP; session and JWT issued on success
+- [x] **AUTH-03**: Owner can create multiple shops under a single account
+- [x] **AUTH-04**: Owner can invite staff with roles: manager or cashier
+- [x] **AUTH-05**: Cashier cannot view reports or edit past bills without explicit owner permission grant
+- [x] **AUTH-06**: Every API endpoint enforces a DRF permission class tied to the user's shop role
+- [x] **AUTH-07**: OTP endpoint is rate-limited (max 5 attempts per 10 minutes per phone number)
+- [x] **AUTH-08**: JWT is used for API clients; session auth is used for Django admin only
 
 ### Customer Ledger (Udhaar)
 
@@ -37,10 +37,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Item Master
 
-- [ ] **ITEM-01**: Owner/manager can create an item with category, name, selling price (paise), cost price (paise), optional barcode, GST category, and active flag
-- [ ] **ITEM-02**: Owner/manager can create variants of an item (e.g. Maggi masala, Maggi chicken)
-- [ ] **ITEM-03**: Owner/manager can mark an item inactive (soft-delete; item still appears in past bills)
-- [ ] **ITEM-04**: Item list is filterable by category and shows active/inactive status with label + icon
+- [x] **ITEM-01**: Owner/manager can create an item with category, name, selling price (paise), cost price (paise), optional barcode, GST category, and active flag
+- [x] **ITEM-02**: Owner/manager can create variants of an item (e.g. Maggi masala, Maggi chicken)
+- [x] **ITEM-03**: Owner/manager can mark an item inactive (soft-delete; item still appears in past bills)
+- [x] **ITEM-04**: Item list is filterable by category and shows active/inactive status with label + icon
 
 ### POS Billing
 
@@ -56,11 +56,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Stock Management
 
-- [ ] **STCK-01**: Purchase entry records stock received (supplier, items, quantities, cost)
-- [ ] **STCK-02**: Selling an item via billing auto-decrements its stock level in the same atomic transaction
-- [ ] **STCK-03**: Stock changes are ledger entries — never direct column edits
-- [ ] **STCK-04**: Low-stock alert is shown for items below a configurable threshold
-- [ ] **STCK-05**: Dead-stock report lists items with no sales in N days (configurable, default 30)
+- [x] **STCK-01**: Purchase entry records stock received (supplier, items, quantities, cost)
+- [x] **STCK-02**: Selling an item via billing auto-decrements its stock level in the same atomic transaction
+- [x] **STCK-03**: Stock changes are ledger entries — never direct column edits
+- [x] **STCK-04**: Low-stock alert is shown for items below a configurable threshold
+- [x] **STCK-05**: Dead-stock report lists items with no sales in N days (configurable, default 30)
 
 ### Cash Book
 
@@ -133,22 +133,22 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Infrastructure & Deployment
 
-- [ ] **INFR-01**: `/healthz` endpoint checks DB connectivity and returns 200 or 503
-- [ ] **INFR-02**: gunicorn config: worker count from `WEB_CONCURRENCY` (default 2), `max_requests` set, graceful timeout set, logs to stdout
-- [ ] **INFR-03**: `render.yaml` (or `Procfile`) for PaaS deploy (Render/Railway); migrations run as a release step, never on web startup
-- [ ] **INFR-04**: VPS fallback: `gunicorn.conf.py`, systemd unit (`Restart=always`), `nginx.conf`
-- [ ] **INFR-05**: `.env.example` documents every environment variable with explanation
-- [ ] **INFR-06**: Sentry captures all unhandled exceptions with `shop_id` and `user_id` tags; no PII in logs
-- [ ] **INFR-07**: `DEBUG=False` enforced in production; `ALLOWED_HOSTS` from env; `SECURE_*` headers enabled
-- [ ] **INFR-08**: `CONN_MAX_AGE` set; app runs within 512 MB at 2 gunicorn workers
+- [x] **INFR-01**: `/healthz` endpoint checks DB connectivity and returns 200 or 503
+- [x] **INFR-02**: gunicorn config: worker count from `WEB_CONCURRENCY` (default 2), `max_requests` set, graceful timeout set, logs to stdout
+- [x] **INFR-03**: `render.yaml` (or `Procfile`) for PaaS deploy (Render/Railway); migrations run as a release step, never on web startup
+- [x] **INFR-04**: VPS fallback: `gunicorn.conf.py`, systemd unit (`Restart=always`), `nginx.conf`
+- [x] **INFR-05**: `.env.example` documents every environment variable with explanation
+- [x] **INFR-06**: Sentry captures all unhandled exceptions with `shop_id` and `user_id` tags; no PII in logs
+- [x] **INFR-07**: `DEBUG=False` enforced in production; `ALLOWED_HOSTS` from env; `SECURE_*` headers enabled
+- [x] **INFR-08**: `CONN_MAX_AGE` set; app runs within 512 MB at 2 gunicorn workers
 
 ### Backups & Restore
 
-- [ ] **BACK-01**: Nightly `pg_dump` encrypted with a key from env, uploaded to S3-compatible or Backblaze B2 storage
-- [ ] **BACK-02**: 30-day backup retention; backups run from a django-q2 scheduled task, not the web process
-- [ ] **BACK-03**: Manual JSON export per shop available from the UI
-- [ ] **BACK-04**: `deploy/backup.sh` and `deploy/restore.sh` scripts exist and are documented
-- [ ] **BACK-05**: `restore.sh` restores into a staging DB; monthly restore drill is documented
+- [x] **BACK-01**: Nightly `pg_dump` encrypted with a key from env, uploaded to S3-compatible or Backblaze B2 storage
+- [x] **BACK-02**: 30-day backup retention; backups run from a django-q2 scheduled task, not the web process
+- [x] **BACK-03**: Manual JSON export per shop available from the UI
+- [x] **BACK-04**: `deploy/backup.sh` and `deploy/restore.sh` scripts exist and are documented
+- [x] **BACK-05**: `restore.sh` restores into a staging DB; monthly restore drill is documented
 
 ### Admin Panel
 
