@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'shops.apps.ShopsConfig',
     'health.apps.HealthConfig',
     'inventory.apps.InventoryConfig',
+    'ledgers.apps.LedgersConfig',
 ]
 
 MIDDLEWARE = [

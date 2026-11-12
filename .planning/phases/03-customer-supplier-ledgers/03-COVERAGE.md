@@ -1,0 +1,1 @@
+No external API integration: Phase 3 builds internal customer udhaar ledger, supplier ledger, WhatsApp URL text generation, and debt aging reports using PostgreSQL. No external third-party API or SDK is integrated in this phase.
