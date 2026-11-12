@@ -20,20 +20,20 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Customer Ledger (Udhaar)
 
-- [ ] **CUST-01**: Owner/manager can add a customer with name and optional 10-digit phone number
-- [ ] **CUST-02**: Staff can add a credit entry (udhaar given) with amount, note, and IST timestamp
-- [ ] **CUST-03**: Staff can add a payment entry (udhaar received) with amount, note, and IST timestamp
-- [ ] **CUST-04**: Customer ledger displays entries in append-only order with running balance
-- [ ] **CUST-05**: Customer list is sortable by highest outstanding balance
-- [ ] **CUST-06**: WhatsApp reminder link (wa.me) is generated from the customer's phone number and outstanding balance
-- [ ] **CUST-07**: Aging report shows days since oldest unpaid entry per customer
+- [x] **CUST-01**: Owner/manager can add a customer with name and optional 10-digit phone number
+- [x] **CUST-02**: Staff can add a credit entry (udhaar given) with amount, note, and IST timestamp
+- [x] **CUST-03**: Staff can add a payment entry (udhaar received) with amount, note, and IST timestamp
+- [x] **CUST-04**: Customer ledger displays entries in append-only order with running balance
+- [x] **CUST-05**: Customer list is sortable by highest outstanding balance
+- [x] **CUST-06**: WhatsApp reminder link (wa.me) is generated from the customer's phone number and outstanding balance
+- [x] **CUST-07**: Aging report shows days since oldest unpaid entry per customer
 
 ### Supplier Ledger
 
-- [ ] **SUPP-01**: Owner/manager can add a supplier with name, phone, and address
-- [ ] **SUPP-02**: Staff can record a purchase bill (supplier, items, amounts, date)
-- [ ] **SUPP-03**: Staff can record a payment made to a supplier
-- [ ] **SUPP-04**: Supplier ledger shows purchase bills, payments, and balance due
+- [x] **SUPP-01**: Owner/manager can add a supplier with name, phone, and address
+- [x] **SUPP-02**: Staff can record a purchase bill (supplier, items, amounts, date)
+- [x] **SUPP-03**: Staff can record a payment made to a supplier
+- [x] **SUPP-04**: Supplier ledger shows purchase bills, payments, and balance due
 
 ### Item Master
 
