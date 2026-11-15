@@ -11,4 +11,5 @@ urlpatterns = [
     path('api/ledgers/', include('ledgers.urls')),
     path('api/billing/', include('billing.urls')),
     path('api/cashbook/', include('cashbook.urls')),
+    path('api/sync/', include('sync.urls')),
 ]

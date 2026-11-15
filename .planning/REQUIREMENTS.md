@@ -88,16 +88,16 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Offline Sync Engine
 
-- [ ] **SYNC-01**: Client generates UUIDv4 for every business record; no auto-increment IDs in the API
-- [ ] **SYNC-02**: Writes go to IndexedDB (Dexie.js) first, then to a local outbox queue
-- [ ] **SYNC-03**: Client pushes outbox to `POST /api/sync/push` with exponential backoff + jitter; retries on reconnect and app start
-- [ ] **SYNC-04**: `POST /api/sync/push` accepts a batch of operations, each with an idempotency key; replaying the same key never creates a duplicate; each batch runs in one DB transaction
-- [ ] **SYNC-05**: `GET /api/sync/pull?cursor=...` returns changes since a server-issued monotonic sequence cursor (not a timestamp)
-- [ ] **SYNC-06**: Client never clears the outbox entry until the server confirms the idempotency key
-- [ ] **SYNC-07**: Client shows sync status in the header: "Synced", "N pending", "Offline", "Sync error"
-- [ ] **SYNC-08**: Ledger, bill, and stock entries are append-only; they are never overwritten during conflict resolution
-- [ ] **SYNC-09**: Non-financial fields (item name, phone) use last-write-wins by server timestamp; losing version is kept in audit log
-- [ ] **SYNC-10**: Sync tests cover: replay (idempotency), offline-to-online, conflicting edits, server restart mid-batch
+- [x] **SYNC-01**: Client generates UUIDv4 for every business record; no auto-increment IDs in the API
+- [x] **SYNC-02**: Writes go to IndexedDB (Dexie.js) first, then to a local outbox queue
+- [x] **SYNC-03**: Client pushes outbox to `POST /api/sync/push` with exponential backoff + jitter; retries on reconnect and app start
+- [x] **SYNC-04**: `POST /api/sync/push` accepts a batch of operations, each with an idempotency key; replaying the same key never creates a duplicate; each batch runs in one DB transaction
+- [x] **SYNC-05**: `GET /api/sync/pull?cursor=...` returns changes since a server-issued monotonic sequence cursor (not a timestamp)
+- [x] **SYNC-06**: Client never clears the outbox entry until the server confirms the idempotency key
+- [x] **SYNC-07**: Client shows sync status in the header: "Synced", "N pending", "Offline", "Sync error"
+- [x] **SYNC-08**: Ledger, bill, and stock entries are append-only; they are never overwritten during conflict resolution
+- [x] **SYNC-09**: Non-financial fields (item name, phone) use last-write-wins by server timestamp; losing version is kept in audit log
+- [x] **SYNC-10**: Sync tests cover: replay (idempotency), offline-to-online, conflicting edits, server restart mid-batch
 
 ### Subscriptions
 

@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'ledgers.apps.LedgersConfig',
     'billing.apps.BillingConfig',
     'cashbook.apps.CashbookConfig',
+    'sync.apps.SyncConfig',
 ]
 
 MIDDLEWARE = [
