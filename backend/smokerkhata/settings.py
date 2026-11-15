@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'billing.apps.BillingConfig',
     'cashbook.apps.CashbookConfig',
     'sync.apps.SyncConfig',
+    'audit.apps.AuditConfig',
+    'reports.apps.ReportsConfig',
 ]
 
 MIDDLEWARE = [
