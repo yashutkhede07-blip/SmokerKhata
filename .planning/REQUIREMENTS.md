@@ -101,16 +101,16 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Subscriptions
 
-- [ ] **SUBS-01**: New accounts get a 14-day free trial with all features, no payment method required
-- [ ] **SUBS-02**: Plans (Monthly, Quarterly, Yearly) are stored in a Plan model editable from Django admin — no hardcoded limits
-- [ ] **SUBS-03**: Plan limits include: number of employees, number of shops, backup retention days, export access
-- [ ] **SUBS-04**: Owner can subscribe via Razorpay Subscriptions (web) or Google Play Billing (Android)
-- [ ] **SUBS-05**: Razorpay webhook signature is verified; payload is saved to DB first, then processed by a django-q2 job; handler is idempotent
-- [ ] **SUBS-06**: Google Play Billing purchase is verified on the server via the Google Play Developer API
-- [ ] **SUBS-07**: Subscription status is enforced on the server on every protected API call
-- [ ] **SUBS-08**: After trial/subscription expiry: 5-day grace period (all features), then read-only mode
-- [ ] **SUBS-09**: Data is never deleted after expiry; Excel/PDF export is available for 90 days after expiry
-- [ ] **SUBS-10**: Prorated upgrade and downgrade is supported
+- [x] **SUBS-01**: New accounts get a 14-day free trial with all features, no payment method required
+- [x] **SUBS-02**: Plans (Monthly, Quarterly, Yearly) are stored in a Plan model editable from Django admin — no hardcoded limits
+- [x] **SUBS-03**: Plan limits include: number of employees, number of shops, backup retention days, export access
+- [x] **SUBS-04**: Owner can subscribe via Razorpay Subscriptions (web) or Google Play Billing (Android)
+- [x] **SUBS-05**: Razorpay webhook signature is verified; payload is saved to DB first, then processed by a django-q2 job; handler is idempotent
+- [x] **SUBS-06**: Google Play Billing purchase is verified on the server via the Google Play Developer API
+- [x] **SUBS-07**: Subscription status is enforced on the server on every protected API call
+- [x] **SUBS-08**: After trial/subscription expiry: 5-day grace period (all features), then read-only mode
+- [x] **SUBS-09**: Data is never deleted after expiry; Excel/PDF export is available for 90 days after expiry
+- [x] **SUBS-10**: Prorated upgrade and downgrade is supported
 
 ### PWA & Frontend
 
@@ -152,9 +152,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Admin Panel
 
-- [ ] **ADMN-01**: Customized Django admin lists shops with subscription status, MRR, churn, failed payments
-- [ ] **ADMN-02**: Admin can extend a trial or plan manually with a mandatory reason note logged in the audit log
-- [ ] **ADMN-03**: Feature flags per plan are configurable from Django admin
+- [x] **ADMN-01**: Customized Django admin lists shops with subscription status, MRR, churn, failed payments
+- [x] **ADMN-02**: Admin can extend a trial or plan manually with a mandatory reason note logged in the audit log
+- [x] **ADMN-03**: Feature flags per plan are configurable from Django admin
 
 ## v2 Requirements
 

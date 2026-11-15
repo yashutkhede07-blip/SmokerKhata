@@ -1,5 +1,6 @@
 import pytest
 from datetime import date
+from django.utils import timezone
 from accounts.models import User
 from shops.models import Shop
 from accounts.authentication import generate_tokens_for_user
@@ -65,7 +66,7 @@ def test_supplier_ledger_flow(client, shop_setup):
             'entry_type': SupplierEntryType.PURCHASE_BILL,
             'amount_paise': 500000,
             'bill_number': 'INV-402',
-            'bill_date': str(date.today()),
+            'bill_date': str(timezone.now().date()),
             'notes': '5 crates Thums Up, 3 crates Coke'
         },
         format='json',

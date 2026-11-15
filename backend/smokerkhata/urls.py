@@ -14,4 +14,5 @@ urlpatterns = [
     path('api/sync/', include('sync.urls')),
     path('api/audit/', include('audit.urls')),
     path('api/reports/', include('reports.urls')),
+    path('api/subscriptions/', include('subscriptions.urls')),
 ]

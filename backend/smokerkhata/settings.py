@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'sync.apps.SyncConfig',
     'audit.apps.AuditConfig',
     'reports.apps.ReportsConfig',
+    'subscriptions.apps.SubscriptionsConfig',
 ]
 
 MIDDLEWARE = [
