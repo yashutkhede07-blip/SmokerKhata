@@ -114,22 +114,22 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### PWA & Frontend
 
-- [ ] **PWA-01**: Frontend is a React 18 + TypeScript + Vite + Tailwind CSS PWA with a service worker and web manifest
-- [ ] **PWA-02**: Service worker caches the app shell so the app opens with no network (offline-first)
-- [ ] **PWA-03**: IndexedDB via Dexie.js is used for offline storage
-- [ ] **PWA-04**: Frontend builds to static files served by Django (whitenoise) — single deployable unit
-- [ ] **PWA-05**: Three theme modes: Light, Dark, System; stored per user; switch instantly, no reload
-- [ ] **PWA-06**: Design tokens follow the strict grayscale spec (no purple, no gradients, WCAG AA)
-- [ ] **PWA-07**: Hindi and English UI using i18next; layouts handle longer Hindi labels with wrapping
-- [ ] **PWA-08**: Touch targets are minimum 44px; POS buttons minimum 56px
-- [ ] **PWA-09**: Page load under 3 seconds on 3G on a device with under 2 GB RAM
-- [ ] **PWA-10**: All 10 screens implemented: Login, Home dashboard, POS/Billing, Customer ledger, Item master, Stock, Cash book, Reports, Settings, Sync status indicator
+- [x] **PWA-01**: Frontend is a React 18 + TypeScript + Vite + Tailwind CSS PWA with a service worker and web manifest
+- [x] **PWA-02**: Service worker caches the app shell so the app opens with no network (offline-first)
+- [x] **PWA-03**: IndexedDB via Dexie.js is used for offline storage
+- [x] **PWA-04**: Frontend builds to static files served by Django (whitenoise) — single deployable unit
+- [x] **PWA-05**: Three theme modes: Light, Dark, System; stored per user; switch instantly, no reload
+- [x] **PWA-06**: Design tokens follow the strict grayscale spec (no purple, no gradients, WCAG AA)
+- [x] **PWA-07**: Hindi and English UI using i18next; layouts handle longer Hindi labels with wrapping
+- [x] **PWA-08**: Touch targets are minimum 44px; POS buttons minimum 56px
+- [x] **PWA-09**: Page load under 3 seconds on 3G on a device with under 2 GB RAM
+- [x] **PWA-10**: All 10 screens implemented: Login, Home dashboard, POS/Billing, Customer ledger, Item master, Stock, Cash book, Reports, Settings, Sync status indicator
 
 ### Android (Capacitor)
 
-- [ ] **ANDR-01**: Capacitor project wraps the PWA for Android
-- [ ] **ANDR-02**: Project builds as a signed Android App Bundle (AAB) for Google Play submission
-- [ ] **ANDR-03**: Google Play billing plugin integrated; purchase tokens verified on the server
+- [x] **ANDR-01**: Capacitor project wraps the PWA for Android
+- [x] **ANDR-02**: Project builds as a signed Android App Bundle (AAB) for Google Play submission
+- [x] **ANDR-03**: Google Play billing plugin integrated; purchase tokens verified on the server
 
 ### Infrastructure & Deployment
 

@@ -1,0 +1,90 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+const resources = {
+  en: {
+    translation: {
+      appName: 'SmokerKhata',
+      dashboard: 'Dashboard',
+      pos: 'POS Billing',
+      customers: 'Customer Ledger',
+      items: 'Item Master',
+      stock: 'Stock',
+      cashbook: 'Cash Book',
+      reports: 'Reports',
+      settings: 'Settings',
+      syncStatus: 'Sync Status',
+      synced: 'All changes synced',
+      pendingSync: '{{count}} pending sync',
+      offline: 'Offline Mode',
+      todaySales: "Today's Sales",
+      cashInDrawer: 'Cash in Hand',
+      totalUdhaar: 'Total Udhaar Due',
+      lowStockCount: 'Low Stock Items',
+      searchItems: 'Search items or scan barcode...',
+      total: 'Total',
+      checkout: 'Complete Sale',
+      paymentMode: 'Payment Mode',
+      cash: 'Cash',
+      upi: 'UPI',
+      udhaar: 'Udhaar',
+      split: 'Split',
+      save: 'Save',
+      cancel: 'Cancel',
+      language: 'Language',
+      theme: 'Theme',
+      light: 'Light',
+      dark: 'Dark',
+      system: 'System',
+    },
+  },
+  hi: {
+    translation: {
+      appName: 'स्मोकर खाता',
+      dashboard: 'डैशबोर्ड',
+      pos: 'बिलिंग (पीओएस)',
+      customers: 'ग्राहक उधार खाता',
+      items: 'सामान (आइटम मास्टर)',
+      stock: 'स्टॉक इन्वेंटरी',
+      cashbook: 'रोकड़ बही (कैश बुक)',
+      reports: 'रिपोर्ट व लाभ',
+      settings: 'सेटिंग्स',
+      syncStatus: 'सिंक स्थिति',
+      synced: 'सभी डेटा सुरक्षित सिंक है',
+      pendingSync: '{{count}} सिंक होना बाकी है',
+      offline: 'ऑफ़लाइन मोड',
+      todaySales: 'आज की कुल बिक्री',
+      cashInDrawer: 'गल्ले में नकद',
+      totalUdhaar: 'कुल बकाया उधार',
+      lowStockCount: 'कम स्टॉक वाले आइटम',
+      searchItems: 'सामान खोजें या बारकोड स्कैन करें...',
+      total: 'कुल योग',
+      checkout: 'बिल बनाएं',
+      paymentMode: 'भुगतान का तरीका',
+      cash: 'नकद',
+      upi: 'यूपीआई',
+      udhaar: 'उधार',
+      split: 'मिश्रित (स्प्लिट)',
+      save: 'सुरक्षित करें',
+      cancel: 'रद्द करें',
+      language: 'भाषा (Language)',
+      theme: 'थीम',
+      light: 'लाइट',
+      dark: 'डार्क',
+      system: 'सिस्टम अनुसार',
+    },
+  },
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: localStorage.getItem('sk_lang') || 'en',
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+export default i18n;

@@ -1,5 +1,9 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include
+from django.views.generic import TemplateView
+from django.views.static import serve
+from django.conf import settings
+import os
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,3 +20,14 @@ urlpatterns = [
     path('api/reports/', include('reports.urls')),
     path('api/subscriptions/', include('subscriptions.urls')),
 ]
+
+# Serve PWA static assets and SPA index fallback (PWA-04)
+static_pwa_dir = settings.BASE_DIR / 'static_pwa'
+if static_pwa_dir.exists():
+    urlpatterns += [
+        re_path(r'^(?!api/|admin/|healthz).*$', serve, {
+            'document_root': str(static_pwa_dir),
+            'path': 'index.html',
+        }),
+    ]
+
