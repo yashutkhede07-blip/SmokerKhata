@@ -3,7 +3,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   LayoutDashboard, ShoppingCart, Users, Package, Layers,
-  BookOpen, BarChart3, Settings, Wifi, WifiOff, RefreshCw,
+  BookOpen, BarChart3, Settings, WifiOff, RefreshCw,
   Sun, Moon, Globe
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
